@@ -1,4 +1,4 @@
-package com.gapcoder.mango;
+﻿package com.gapcoder.mango;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -157,8 +157,8 @@ public class Main extends AppCompatActivity {
 
     private void get() {
 
-        String url = "https://free-api.heweather.com/s6/weather/forecast?location=" + city + "&key=8ceb2dfadaa2449cb04768fa857f09d1";
-        String url2 = "https://free-api.heweather.com/s6/weather/lifestyle?location=" + city + "&key=8ceb2dfadaa2449cb04768fa857f09d1";
+        String url = "https://free-api.heweather.com/s6/weather/forecast?location=" + city + "&key={your key}";
+        String url2 = "https://free-api.heweather.com/s6/weather/lifestyle?location=" + city + "&key={your key}";
         try {
             String s = Curl.getText(url);//response.body().string();
             String s2 = Curl.getText(url2);//.body().string();
