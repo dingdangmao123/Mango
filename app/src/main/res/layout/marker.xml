@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gapcoder.mango.Main">
+    <ImageView
+        android:id="@+id/bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/a"
+        android:scaleType="centerCrop" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fitsSystemWindows="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize">
+
+                        <Button
+                            android:id="@+id/back"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="left"
+                            android:layout_marginLeft="10dp"
+                            android:background="@mipmap/ic_arrow_back" />
+
+                        <TextView
+                            android:id="@+id/city"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:text="设置"
+                            android:textColor="#FFFFFF"
+                            android:textSize="22sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                    <LinearLayout
+                        android:showDividers = "middle"
+                        android:background="#FFFFFF"
+                        android:layout_marginTop="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                        <RelativeLayout
+                            android:id="@+id/about"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_margin="10dp"
+                                android:gravity="center"
+                                android:text="关于"
+                                android:textColor="#A9A9A9"
+                                android:textSize="20sp" />
+
+                            <Button
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_margin="10dp"
+                                android:background="@mipmap/ic_keyboard_arrow_right" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/version"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_margin="10dp"
+                                android:gravity="center"
+                                android:text="版本"
+                                android:textColor="#A9A9A9"
+                                android:textSize="20sp" />
+
+                            <Button
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_margin="10dp"
+                                android:background="@mipmap/ic_keyboard_arrow_right" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+    </FrameLayout>
+
