@@ -7,12 +7,7 @@
 
 ## 运行效果
 
-![](https://github.com/dingdangmao123/Mango/blob/master/demo/s1.jpg)
-
-![](https://github.com/dingdangmao123/Mango/blob/master/demo/s2.jpg)
+![](https://github.com/dingdangmao123/Mango/blob/master/demo/s1.jpg) ![](https://github.com/dingdangmao123/Mango/blob/master/demo/s2.jpg)
 
 
-![](https://github.com/dingdangmao123/Mango/blob/master/demo/s3.jpg)
-
-
-![](https://github.com/dingdangmao123/Mango/blob/master/demo/s4.jpg)
+![](https://github.com/dingdangmao123/Mango/blob/master/demo/s3.jpg) ![](https://github.com/dingdangmao123/Mango/blob/master/demo/s4.jpg)
