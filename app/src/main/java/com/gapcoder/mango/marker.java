@@ -1,6 +1,7 @@
 package com.gapcoder.mango;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
@@ -10,45 +11,56 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-public class marker extends AppCompatActivity {
+import com.gapcoder.mango.Model.Config;
+import com.gapcoder.mango.Utils.ConfigTool;
+import com.suke.widget.SwitchButton;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnCheckedChanged;
+import butterknife.OnClick;
+
+public class marker extends Base {
+
+    void init() {
         setContentView(R.layout.marker);
-        if (Build.VERSION.SDK_INT >= 21) {
-            View d = getWindow().getDecorView();
-            d.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-        }
-        init();
+        ButterKnife.bind(this);
+
+        sb.setOnCheckedChangeListener(new SwitchButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(SwitchButton view, boolean isChecked) {
+                save(isChecked);
+            }
+        });
+        Config ins = ConfigTool.parse(this);
+        sb.setChecked(ins.isAutoLocation());
     }
 
-    private void init() {
-        Button btn = (Button) findViewById(R.id.back);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
 
-        RelativeLayout about = (RelativeLayout) findViewById(R.id.about);
-        about.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(marker.this, "芒果天气是一个简洁的天气App,只提供最简洁的功能，没有多余", Toast.LENGTH_SHORT).show();
-            }
-        });
+    @BindView(R.id.sb)
+    SwitchButton sb;
 
-        RelativeLayout version = (RelativeLayout) findViewById(R.id.version);
-        version.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(marker.this, "v1.0 by gapcoder", Toast.LENGTH_SHORT).show();
-            }
-        });
+    @OnClick(R.id.back)
+    void back() {
+        Intent i = new Intent();
+        setResult(RESULT_OK, i);
+        finish();
     }
 
+    @OnClick(R.id.about)
+    void about() {
+        Toast.makeText(marker.this, "芒果天气是一个简洁的天气App,只提供最简洁的功能，没有多余", Toast.LENGTH_SHORT).show();
+    }
+
+    @OnClick(R.id.version)
+    void version() {
+        Toast.makeText(marker.this, "v1.2 by gapcoder", Toast.LENGTH_SHORT).show();
+    }
+
+    private void save(boolean isCheck) {
+        SharedPreferences.Editor editor = getSharedPreferences("config", MODE_PRIVATE).edit();
+        editor.putBoolean("autoLocation", isCheck);
+        editor.apply();
+    }
 
 }

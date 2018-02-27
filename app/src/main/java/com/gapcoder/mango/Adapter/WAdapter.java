@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.gapcoder.mango.Model.unit;
 import com.gapcoder.mango.R;
+import com.gapcoder.mango.Utils.MyColor;
 import com.gapcoder.mango.Utils.UtilColor;
 import com.gapcoder.mango.Utils.UtilColor;
 
@@ -41,18 +42,18 @@ public class WAdapter extends RecyclerView.Adapter<WAdapter.SnapViewHolder> {
     public void onBindViewHolder(SnapViewHolder holder, int position) {
         unit.HeWeather6Bean.DailyForecastBean b = data.get(position);
         holder.left1.setText(b.getCond_txt_d());
-        holder.left2.setText(b.getTmp_min()+"℃ ~ "+b.getTmp_max()+"℃");
+        holder.left2.setText(b.getTmp_min() + "℃ ~ " + b.getTmp_max() + "℃");
         holder.right1.setText(b.getDate());
-        holder.right2.setText(b.getWind_dir()+" "+b.getWind_sc());
-        holder.right3.setText("能见度: "+b.getVis()+"公里");
+        holder.right2.setText(b.getWind_dir() + " " + b.getWind_sc());
+        holder.right3.setText("能见度: " + b.getVis() + "公里");
 
-       // UtilColor.set(holder.left,Integer.parseInt(b.getTmp_max()));
     }
 
     @Override
     public int getItemCount() {
         return data.size();
     }
+
     static class SnapViewHolder extends RecyclerView.ViewHolder {
 
         ViewGroup left;
@@ -64,12 +65,13 @@ public class WAdapter extends RecyclerView.Adapter<WAdapter.SnapViewHolder> {
 
         public SnapViewHolder(View itemView) {
             super(itemView);
-            left=itemView.findViewById(R.id.left);
-            left1= (TextView)itemView.findViewById(R.id.left1);
-            left2= (TextView)itemView.findViewById(R.id.left2);
-            right1= (TextView)itemView.findViewById(R.id.right1);
-            right2= (TextView)itemView.findViewById(R.id.right2);
-            right3= (TextView)itemView.findViewById(R.id.right3);
+            left = itemView.findViewById(R.id.left);
+            left.setBackgroundResource(MyColor.get());
+            left1 = (TextView) itemView.findViewById(R.id.left1);
+            left2 = (TextView) itemView.findViewById(R.id.left2);
+            right1 = (TextView) itemView.findViewById(R.id.right1);
+            right2 = (TextView) itemView.findViewById(R.id.right2);
+            right3 = (TextView) itemView.findViewById(R.id.right3);
         }
     }
 }

@@ -55,14 +55,39 @@
 
                     <LinearLayout
                         android:showDividers = "middle"
-                        android:background="#FFFFFF"
                         android:layout_marginTop="40dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+                        <RelativeLayout
+                            android:background="#FFFFFF"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_marginBottom="40dp"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_margin="10dp"
+                                android:gravity="center"
+                                android:text="自动定位"
+                                android:textColor="#A9A9A9"
+                                android:textSize="20sp" />
+                            <com.suke.widget.SwitchButton
+                                android:id="@+id/sb"
+                                app:sb_show_indicator="false"
+                                app:sb_checked="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        </RelativeLayout>
 
 
                         <RelativeLayout
+                            android:background="#FFFFFF"
                             android:id="@+id/about"
                             android:layout_height="wrap_content"
                             android:layout_width="match_parent"
@@ -84,8 +109,12 @@
                                 android:layout_margin="10dp"
                                 android:background="@mipmap/ic_keyboard_arrow_right" />
                         </RelativeLayout>
-
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/gray"/>
                         <RelativeLayout
+                            android:background="#FFFFFF"
                             android:id="@+id/version"
                             android:layout_height="wrap_content"
                             android:layout_width="match_parent"
@@ -110,6 +139,7 @@
 
                     </LinearLayout>
                 </LinearLayout>
+
             </ScrollView>
     </FrameLayout>
 
