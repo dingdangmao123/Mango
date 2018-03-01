@@ -2,22 +2,15 @@ package com.gapcoder.mango;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.gapcoder.mango.Model.Config;
 import com.gapcoder.mango.Utils.ConfigTool;
 import com.suke.widget.SwitchButton;
+import com.zhy.changeskin.SkinManager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 
 public class marker extends Base {
@@ -34,6 +27,8 @@ public class marker extends Base {
         });
         Config ins = ConfigTool.parse(this);
         sb.setChecked(ins.isAutoLocation());
+
+        SkinManager.getInstance().changeSkin(ConfigTool.getThemeColor(this));
     }
 
 

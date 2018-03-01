@@ -7,11 +7,21 @@ package com.gapcoder.mango.Model;
 public class Config {
     private boolean autoLocation;
 
+    private String themeColor;
+
     public boolean isAutoLocation() {
         return autoLocation;
     }
 
     public void setAutoLocation(boolean autoLocation) {
         this.autoLocation = autoLocation;
+    }
+
+    public String getThemeColor() {
+        return themeColor;
+    }
+
+    public void setThemeColor(String themeColor) {
+        this.themeColor = themeColor;
     }
 }

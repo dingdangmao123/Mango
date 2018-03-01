@@ -8,11 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.gapcoder.mango.Main;
 import com.gapcoder.mango.Model.unit;
 import com.gapcoder.mango.R;
+import com.gapcoder.mango.Utils.ConfigTool;
 import com.gapcoder.mango.Utils.MyColor;
 import com.gapcoder.mango.Utils.UtilColor;
 import com.gapcoder.mango.Utils.UtilColor;
+import com.zhy.changeskin.SkinManager;
 
 import java.util.List;
 
@@ -35,7 +38,9 @@ public class WAdapter extends RecyclerView.Adapter<WAdapter.SnapViewHolder> {
     public SnapViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //加载item 布局文件
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.weather, parent, false);
-        return new SnapViewHolder(view);
+        SnapViewHolder h= new SnapViewHolder(view);
+
+        return h;
     }
 
     @Override
@@ -46,7 +51,7 @@ public class WAdapter extends RecyclerView.Adapter<WAdapter.SnapViewHolder> {
         holder.right1.setText(b.getDate());
         holder.right2.setText(b.getWind_dir() + " " + b.getWind_sc());
         holder.right3.setText("能见度: " + b.getVis() + "公里");
-
+        SkinManager.getInstance().changeSkin(ConfigTool.getThemeColor(mContext));
     }
 
     @Override
@@ -66,7 +71,7 @@ public class WAdapter extends RecyclerView.Adapter<WAdapter.SnapViewHolder> {
         public SnapViewHolder(View itemView) {
             super(itemView);
             left = itemView.findViewById(R.id.left);
-            left.setBackgroundResource(MyColor.get());
+            //left.setBackgroundResource(MyColor.get());
             left1 = (TextView) itemView.findViewById(R.id.left1);
             left2 = (TextView) itemView.findViewById(R.id.left2);
             right1 = (TextView) itemView.findViewById(R.id.right1);

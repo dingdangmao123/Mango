@@ -24,6 +24,7 @@ import com.gapcoder.mango.Utils.Curl;
 import com.gapcoder.mango.Utils.Net;
 import com.gapcoder.mango.Utils.Pool;
 import com.google.gson.Gson;
+import com.zhy.changeskin.SkinManager;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -37,6 +38,7 @@ public class Main extends Base {
     Handler mh = new Handler();
     NetState state;
     Config config;
+    Boolean theme=false;
 
     @BindView(R.id.bg)
     ImageView bg;
@@ -76,6 +78,11 @@ public class Main extends Base {
         startActivityForResult(i, MARKER_CODE);
     }
 
+    @OnClick(R.id.skin)
+    void button_skin() {
+        Intent i = new Intent(Main.this, Skin.class);
+        startActivity(i);
+    }
 
     void init() {
 
@@ -99,6 +106,8 @@ public class Main extends Base {
             }
         });
 
+        SkinManager.getInstance().changeSkin(ConfigTool.getThemeColor(Main.this));
+
         config = ConfigTool.parse(this);
         city = getCity();
 
@@ -106,6 +115,7 @@ public class Main extends Base {
         in.addAction("android.net.conn.CONNECTIVITY_CHANGE");
         state = new NetState();
         registerReceiver(state, in);
+
 
         update();
     }
@@ -119,7 +129,6 @@ public class Main extends Base {
         super.onDestroy();
         unregisterReceiver(state);
     }
-
     private void update() {
 
         if (!Net.check(this)) {
@@ -181,6 +190,7 @@ public class Main extends Base {
                 public void run() {
 
                     adapter.notifyDataSetChanged();
+
                     lifestyleAdapter.notifyDataSetChanged();
                     if (ins != null) {
                         unit.HeWeather6Bean.BasicBean basic = ins.getHeWeather6().get(0).getBasic();

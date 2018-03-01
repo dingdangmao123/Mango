@@ -7,4 +7,23 @@
     <color name="green">#00B642</color>
     <color name="gray">#D9D9D9</color>
     <color name="text">#666666</color>
+
+    <color name="themeColor_a">#33F44336</color>
+    <color name="themeColor_b">#3303A9F4</color>
+    <color name="themeColor_c">#33FF9800</color>
+    <color name="themeColor_d">#33673AB7</color>
+    <color name="themeColor_e">#33CDDC39</color>
+    <color name="themeColor_f">#33009688</color>
+    <color name="themeColor_g"> #339E9E9E</color>
+    <color name="themeColor_h">#33FF9800</color>
+
+
+    <color name="themeTextColor_a">#aaF44336</color>
+    <color name="themeTextColor_b">#aa03A9F4</color>
+    <color name="themeTextColor_c">#aaFF9800</color>
+    <color name="themeTextColor_d">#aa673AB7</color>
+    <color name="themeTextColor_e">#aaCDDC39</color>
+    <color name="themeTextColor_f">#aa009688</color>
+    <color name="themeTextColor_g">#aa9E9E9E</color>
+    <color name="themeTextColor_h">#aaFF9800</color>
 </resources>

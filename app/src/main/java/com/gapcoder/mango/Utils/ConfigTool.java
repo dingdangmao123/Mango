@@ -17,10 +17,16 @@ public class ConfigTool {
         return p.getBoolean("autoLocation", false);
 
     }
+    public static String getThemeColor(Context context){
+        SharedPreferences p = context.getSharedPreferences("config", MODE_PRIVATE);
+        return p.getString("themeColor", "a");
+
+    }
     public static Config parse(Context context){
         Config ins=new Config();
         SharedPreferences p = context.getSharedPreferences("config", MODE_PRIVATE);
         ins.setAutoLocation(p.getBoolean("autoLocation",true));
+        ins.setThemeColor(p.getString("themeColor","a"));
         return ins;
     }
 

@@ -45,7 +45,7 @@
                         android:layout_centerInParent="true"
                         android:gravity="center"
                         android:text="城市搜索"
-                        android:textColor="#FFFFFF"
+                        android:tag="skin:themeTextColor:textColor"
                         android:textSize="22sp" />
 
                 </RelativeLayout>
@@ -123,7 +123,7 @@
                 android:inputType="textMultiLine"
                 android:background="@drawable/select2"
                 android:layout_marginTop="10dp"
-                android:textColor="#ffffff"
+                android:textColor="@color/text"
                 android:ems="10"
                 android:id="@+id/city" />
                 <LinearLayout
@@ -135,7 +135,7 @@
                     android:layout_marginTop="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
-                    android:textColor="#ffffff"
+                    android:textColor="@color/text"
                     android:background="@drawable/select1"
                     android:id="@+id/sure" />
                 </LinearLayout>

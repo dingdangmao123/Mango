@@ -5,18 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.gapcoder.mango.Main">
-
     <ImageView
         android:id="@+id/bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/a"
         android:scaleType="centerCrop" />
-<android.support.v4.widget.SwipeRefreshLayout
-    android:id="@+id/refresh"
-    android:tag="skin:themeColor:background"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -38,73 +32,48 @@
                     android:layout_height="?attr/actionBarSize">
 
                     <Button
-                        android:id="@+id/search"
+                        android:id="@+id/back"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
                         android:layout_gravity="left"
                         android:layout_marginLeft="10dp"
-                        android:background="@mipmap/ic_place" />
+                        android:background="@mipmap/ic_arrow_back" />
 
                     <TextView
                         android:id="@+id/city"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:tag="skin:themeTextColor:textColor"
                         android:gravity="center"
-                        android:text=""
-                        android:textColor="#FFFFFF"
+                        android:text="换肤"
+                        android:tag="skin:themeTextColor:textColor"
                         android:textSize="22sp" />
-                    <Button
-                        android:id="@+id/skin"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_toLeftOf="@+id/marker"
-                        android:layout_centerVertical="true"
-                        android:layout_gravity="right"
-                        android:layout_marginRight="10dp"
-                        android:background="@mipmap/ic_wb_sunny" />
-                    <Button
-                        android:id="@+id/marker"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_gravity="right"
-                        android:layout_marginRight="10dp"
-                        android:background="@mipmap/ic_settings" />
                 </RelativeLayout>
             </LinearLayout>
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/rv"
+
+                <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    />
-
-
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:layout_marginBottom="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                app:cardCornerRadius="5dp"
-                app:cardElevation="3dp"
-                >
+                    android:layout_marginTop="60dp"
+                    android:layout_marginBottom="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="3dp"
+                    >
                 <android.support.v7.widget.RecyclerView
-                    android:id="@+id/lifestyle"
+                    android:id="@+id/skin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
                     android:layout_margin="20dp"/>
+                </android.support.v7.widget.CardView>
 
-              </android.support.v7.widget.CardView>
 
 
-        </LinearLayout>
-    </ScrollView></android.support.v4.widget.SwipeRefreshLayout>
+
+            </LinearLayout>
+
+    </ScrollView>
 </FrameLayout>
